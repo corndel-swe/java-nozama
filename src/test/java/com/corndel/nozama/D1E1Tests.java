@@ -1,7 +1,5 @@
 package com.corndel.nozama;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.File;
@@ -16,7 +14,7 @@ public class D1E1Tests {
   @Test
   public void DbExists() {
     var file = new File("nozama.db");
-    assertThat(file.exists()).isTrue();
+    assert file.exists();
   }
 
   @Test
@@ -24,7 +22,7 @@ public class D1E1Tests {
     try (var connection = DriverManager.getConnection(dbUrl)) {
       var metadata = connection.getMetaData();
       var resultSet = metadata.getTables(null, null, "users", new String[] { "TABLE" });
-      assertThat(resultSet.next()).isTrue();
+      assert resultSet.next();
     } catch (Exception e) {
       fail(e);
     }
@@ -35,7 +33,7 @@ public class D1E1Tests {
     try (var connection = DriverManager.getConnection(dbUrl)) {
       var statement = connection.createStatement();
       var resultSet = statement.executeQuery("SELECT * FROM users");
-      assertThat(resultSet.next()).isTrue();
+      assert resultSet.next();
     } catch (Exception e) {
       fail(e);
     }
