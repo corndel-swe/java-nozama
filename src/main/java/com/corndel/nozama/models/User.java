@@ -1,14 +1,14 @@
 package com.corndel.nozama.models;
 
 public class User {
-  private int id;
-  private String username;
-  private String firstName;
-  private String lastName;
-  private String email;
-  private String avatar;
+  private Integer id;
+  public String username;
+  public String firstName;
+  public String lastName;
+  public String email;
+  public String avatar;
 
-  public User(int id, String username, String firstName, String lastName, String email, String avatar) {
+  public User(Integer id, String username, String firstName, String lastName, String email, String avatar) {
     this.id = id;
     this.username = username;
     this.firstName = firstName;
@@ -17,51 +17,7 @@ public class User {
     this.avatar = avatar;
   }
 
-  public int getId() {
+  public Integer getId() {
     return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getAvatar() {
-    return avatar;
-  }
-
-  public void setAvatar(String avatar) {
-    this.avatar = avatar;
   }
 }
