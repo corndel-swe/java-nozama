@@ -1,4 +1,4 @@
-package com.corndel.nozama;
+package com.corndel.nozama.Exercises;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
