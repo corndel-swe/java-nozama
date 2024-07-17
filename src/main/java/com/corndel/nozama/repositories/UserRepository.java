@@ -1,7 +1,7 @@
-package com.corndel.nozama.Repositories;
+package com.corndel.nozama.repositories;
 
 import com.corndel.nozama.DB;
-import com.corndel.nozama.Models.User;
+import com.corndel.nozama.models.User;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.corndel.nozama.Models;
+package com.corndel.nozama.models;
 
 public class User {
   private int id;

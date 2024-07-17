@@ -1,11 +1,11 @@
-package com.corndel.nozama.Exercises;
+package com.corndel.nozama.exercises;
 
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.assertj.core.api.Assertions.assertThat;
-
-import com.corndel.nozama.DB;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
+
+import com.corndel.nozama.DB;
 
 public class D1E2Tests {
 

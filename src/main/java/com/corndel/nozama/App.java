@@ -1,6 +1,6 @@
 package com.corndel.nozama;
 
-import com.corndel.nozama.Repositories.UserRepository;
+import com.corndel.nozama.repositories.UserRepository;
 import io.javalin.Javalin;
 
 public class App {
