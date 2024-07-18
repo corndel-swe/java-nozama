@@ -13,7 +13,15 @@ public class App {
 
   public App() {
     app = Javalin.create()
-        .get("/", ctx -> ctx.json(UserRepository.findAll()));
+        .get("/", ctx -> {
+          var users = UserRepository.findAll();
+          ctx.json(users);
+        })
+        .get("/users/{userId}", ctx -> {
+          var id = Integer.parseInt(ctx.pathParam("userId"));
+          var user = UserRepository.findById(id);
+          ctx.json(user);
+        });
   }
 
   public Javalin javalinApp() {
