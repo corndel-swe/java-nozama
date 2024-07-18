@@ -2,6 +2,7 @@ package com.corndel.nozama;
 
 import com.corndel.nozama.repositories.UserRepository;
 import io.javalin.Javalin;
+import io.javalin.http.HttpStatus;
 
 public class App {
   private Javalin app;
@@ -12,15 +13,19 @@ public class App {
   }
 
   public App() {
-    app = Javalin.create()
-        .get("/", ctx -> {
+    app = Javalin.create();
+    app.get(
+        "/",
+        ctx -> {
           var users = UserRepository.findAll();
           ctx.json(users);
-        })
-        .get("/users/{userId}", ctx -> {
+        });
+    app.get(
+        "/users/{userId}",
+        ctx -> {
           var id = Integer.parseInt(ctx.pathParam("userId"));
           var user = UserRepository.findById(id);
-          ctx.json(user);
+          ctx.status(HttpStatus.IM_A_TEAPOT).json(user);
         });
   }
 
