@@ -31,49 +31,7 @@ public class UserRepository {
   }
 
   public static User findById(int id) throws SQLException {
-    // /** TODO: finish this method */
-    // return null;
-
-    // TODO: UNFINISH THIS METHOD
-    var query = "SELECT id, username, firstName, lastName, email, avatar FROM users WHERE id = ?";
-
-    try (var con = DB.getConnection();
-        var stmt = con.prepareStatement(query)) {
-      stmt.setInt(1, id);
-      try (var rs = stmt.executeQuery()) {
-        if (!rs.next()) {
-          return null;
-        }
-        var username = rs.getString("username");
-        var firstName = rs.getString("firstName");
-        var lastName = rs.getString("lastName");
-        var email = rs.getString("email");
-        var avatar = rs.getString("avatar");
-
-        return new User(id, username, firstName, lastName, email, avatar);
-      }
-    }
-  }
-
-  public static User create(String username) throws SQLException {
-    var query = "INSERT INTO users (username, verified) VALUES (?, ?) RETURNING *";
-
-    try (var con = DB.getConnection();
-        var stmt = con.prepareStatement(query)) {
-      stmt.setString(1, username);
-      stmt.executeUpdate();
-      try (var rs = stmt.getResultSet()) {
-        if (!rs.next()) {
-          return null;
-        }
-        var id = rs.getInt("id");
-        var firstName = rs.getString("firstName");
-        var lastName = rs.getString("lastName");
-        var email = rs.getString("email");
-        var avatar = rs.getString("avatar");
-
-        return new User(id, username, firstName, lastName, email, avatar);
-      }
-    }
+    /** TODO: finish this method */
+    return null;
   }
 }

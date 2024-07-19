@@ -24,10 +24,6 @@ public class D3E3 {
            * <p>In case this fails, set the status of the response to the error code and send a
            * useful message.
            */
-          // TODO REMOVE ANSWER
-          var usernameRequest = ctx.bodyAsClass(UsernameRequest.class);
-          account.updateUsername(usernameRequest.newUsername, usernameRequest.password);
-          ctx.json(new UsernameResponse(usernameRequest.newUsername));
         });
   }
 }

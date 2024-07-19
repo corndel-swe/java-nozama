@@ -15,9 +15,6 @@ public class D2E1 {
      * https://tech-docs.corndel.com/javalin/creating-a-server.html
      * https://tech-docs.corndel.com/javalin/request-response.html
      */
-
-    // TODO: REMOVE ANSWER
-    app.get("/ping", ctx -> ctx.result("pong"));
   }
 
   public Javalin javalinApp() {
