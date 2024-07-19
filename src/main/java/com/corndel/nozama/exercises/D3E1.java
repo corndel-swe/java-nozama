@@ -2,11 +2,9 @@ package com.corndel.nozama.exercises;
 
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import java.util.ArrayList;
 
 public class D3E1 {
   private Javalin app;
-  private ArrayList<Alarm> alarms;
 
   public static Counter counter = new Counter();
 
