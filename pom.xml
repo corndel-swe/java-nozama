@@ -8,7 +8,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>java-nozama</name>
-  <description>Software bootcamp MVC project</description>
+  <description>Software bootcamp api project</description>
   <url />
   <licenses>
     <license />
