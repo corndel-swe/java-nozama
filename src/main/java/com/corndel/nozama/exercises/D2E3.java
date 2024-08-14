@@ -14,7 +14,7 @@ public class D2E3 {
 
     app = Javalin.create();
 
-    // https://tech-docs.corndel.com/express/body-and-headers.html
+    // https://tech-docs.corndel.com/javalin/body-and-headers.html
     app.get(
         "/alarms",
         ctx -> {
@@ -32,7 +32,7 @@ public class D2E3 {
         ctx -> {
           /**
            * Request contains a new alarm in the req.body Push it to the end of the alarms array
-           * Respond with a 201 status code
+           * Respond with a 201 status code and the new alarm
            */
         });
   }
