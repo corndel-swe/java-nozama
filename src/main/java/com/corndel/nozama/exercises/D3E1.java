@@ -34,7 +34,7 @@ class CounterRouter {
     /**
      * Add a GET /counter endpoint.
      *
-     * <p>It should simply ctx.json(state)
+     * <p>It should respond the counter static variables count
      */
   }
 
@@ -42,7 +42,7 @@ class CounterRouter {
     /**
      * Add a PUT /counter/increment endpoint.
      *
-     * <p>It should increase the counter by 1 and then res.json(state)
+     * <p>It should increase the counter by 1 and then respond with the count
      */
   }
 }
