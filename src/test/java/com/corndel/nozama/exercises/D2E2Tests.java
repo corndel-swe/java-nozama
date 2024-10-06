@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class D2E2Tests {
 
-  Javalin app = new D2E2().javalinApp();
+  Javalin app = D2E2.createApp();
 
   @Test
   public void GET_sumup_returns_number() {

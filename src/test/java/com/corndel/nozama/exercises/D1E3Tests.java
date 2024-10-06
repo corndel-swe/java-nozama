@@ -16,6 +16,7 @@ public class D1E3Tests {
 
   @Test
   public void FindsUserWithCorrectId() throws SQLException {
-    assertThat(UserRepository.findById(21).username).isEqualTo("Earl.Pollich76");
+    var user = UserRepository.findById(21);
+    assertThat(user.getUsername()).isEqualTo("Earl.Pollich76");
   }
 }

@@ -12,7 +12,7 @@ public class UserRepository {
 
     try (var con = DB.getConnection();
         var stmt = con.createStatement();
-        var rs = stmt.executeQuery(query); ) {
+        var rs = stmt.executeQuery(query);) {
 
       var users = new ArrayList<User>();
       while (rs.next()) {
@@ -31,7 +31,7 @@ public class UserRepository {
   }
 
   public static User findById(int id) throws SQLException {
-    /** TODO: finish this method */
+    // TODO: finish this method
     return null;
   }
 }

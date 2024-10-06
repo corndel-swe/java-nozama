@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class D2E1Tests {
 
-  Javalin app = new D2E1().javalinApp();
+  Javalin app = D2E1.createApp();
 
   @Test
   public void GET_ping_returns_pong() {

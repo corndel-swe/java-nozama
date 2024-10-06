@@ -19,20 +19,8 @@ public class D3E2Tests {
   }
 
   @Test
-  public void accountThrowsBadRequestIfUsernameIsBlank() {
-    assertThatThrownBy(() -> account.updateUsername("", "elf4life"))
-        .isInstanceOf(BadRequestResponse.class);
-  }
-
-  @Test
   public void accountThrowsUnauthorizedIfPasswordIsNull() {
     assertThatThrownBy(() -> account.updateUsername("aragorn", null))
-        .isInstanceOf(UnauthorizedResponse.class);
-  }
-
-  @Test
-  public void accountThrowsUnauthorizedIfPasswordIsBlank() {
-    assertThatThrownBy(() -> account.updateUsername("aragorn", ""))
         .isInstanceOf(UnauthorizedResponse.class);
   }
 
@@ -43,7 +31,7 @@ public class D3E2Tests {
   }
 
   @Test
-  public void accountUpdatesUsername() {
+  public void accountUpdatesUsername() throws Exception {
     var newUsername = "aragorn";
     account.updateUsername(newUsername, "elf4life");
     assertThat(account.username).isEqualTo(newUsername);

@@ -8,8 +8,7 @@ import io.javalin.testtools.JavalinTest;
 import org.junit.jupiter.api.Test;
 
 public class D3E1Tests {
-  D3E1 d3e1 = new D3E1();
-  Javalin app = d3e1.javalinApp();
+  Javalin app = D3E1.createApp();
 
   @Test
   public void GET_counter_returns_counter_state() {
@@ -40,9 +39,9 @@ public class D3E1Tests {
     JavalinTest.test(
         app,
         (server, client) -> {
-          D3E1.counter.count = 0;
+          D3E1.counter.setCount(0);
           client.put("/counter/increment");
-          assertThat(D3E1.counter.count).isEqualTo(1);
+          assertThat(D3E1.counter.getCount()).isEqualTo(1);
         });
   }
 }
