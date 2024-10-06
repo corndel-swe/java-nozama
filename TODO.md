@@ -40,14 +40,13 @@ same process as the previous days to complete them.
 
 Some refactors you should consider:
 
-- Splitting the API into
-  [separate route files](https://tech-docs.corndel.com/express/routing.html)
+- Organising the API with [routers and controllers](https://tech-docs.corndel.com/javalin/routing.html)
 
 - Using custom
-  [errors and error handling](https://tech-docs.corndel.com/express/sending-errors.html)
+  [errors and error handling](https://tech-docs.corndel.com/javalin/sending-errors.html)
 
 - Adding
-  [validation to the API](https://tech-docs.corndel.com/express/schema-validation.html).
+  [validation to the API](https://tech-docs.corndel.com/javalin/schema-validation.html).
   Note that some schemas are already written in `spec/schemas.js`.
 
 - Adding new endpoints to the API
