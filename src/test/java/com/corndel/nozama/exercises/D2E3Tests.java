@@ -43,14 +43,16 @@ public class D2E3Tests {
     JavalinTest.test(
         app,
         (server, client) -> {
+          var before = AlarmRepository.findAll();
           var alarm = new Alarm("13:37", "Have lunch");
           var alarmJson = new JavalinJackson().toJsonString(alarm, Alarm.class);
           var response = client.post("/alarms", alarm);
+          var after = AlarmRepository.findAll();
+
           assertThat(response.code()).isEqualTo(201);
           assertThat(response.body().string()).isEqualTo(alarmJson);
+          assertThat(after.size()).isEqualTo(before.size() + 1);
 
-          alarms = AlarmRepository.findAll();
-          assertThat(alarms.get(alarms.size() - 1)).isEqualTo(alarm);
         });
   }
 }
