@@ -15,9 +15,18 @@ public class D3E2 {
       this.password = password;
     }
 
-    // TODO: https://tech-docs.corndel.com/javalin/sending-errors.html
-    // In this exercise, you should throw Javalin custom exceptions
-    // You do not need to configure fallback handlers
+    /**
+     * Updates the username of the account.
+     *
+     * <p>
+     * This method performs validations and throws Javalin custom exceptions
+     * if any of the checks fail.
+     *
+     * @see https://tech-docs.corndel.com/javalin/sending-errors.html
+     * @param newUsername     the new username for the account
+     * @param passwordAttempt the password to check against
+     * @throws Exception if any of the checks fail
+     */
     public void updateUsername(String newUsername, String passwordAttempt) throws Exception {
       // TODO: If newUsername is not given, throw a BadRequestResponse
 
