@@ -8,34 +8,33 @@ public class D2E2 {
    * 
    * - GET /sumup responds with the sum of the integers from 1 to n, where n is
    * provided as a query parameter. If n is not provided, it responds with 0.
+   * 
    * - GET /multiply/{x}/{y} responds with the product of x and y.
    * 
+   * @see https://tech-docs.corndel.com/javalin/query-params.html
+   * @see https://tech-docs.corndel.com/javalin/url-params.html
    * @return a configured Javalin instance
    */
   public static Javalin createApp() {
     var app = Javalin.create();
-
-    // TODO: https://tech-docs.corndel.com/javalin/query-params.html
     app.get(
         "/sumup",
         ctx -> {
-          /**
-           * This endpoint accepts a query param, n
-           * and responds with the sum of the integers from 1 to n
-           * e.g. /sumup?n=4 => 10
-           * 
-           * If n is not provided, it responds with 0
-           * e.g. /sumup => 0
-           */
+          var n = Integer.parseInt(ctx.queryParam("n"));
+          var sum = 0;
+          for (var i = 1; i <= n; i++) {
+            sum += i;
+          }
+          ctx.json(sum);
         });
 
-    // TODO: https://tech-docs.corndel.com/javalin/url-params.html
     app.get(
         "/multiply/{x}/{y}",
         ctx -> {
-          /**
-           * This endpoint responds with the product of x and y e.g. /multiply/3/5 => 15
-           */
+          var x = Integer.parseInt(ctx.pathParam("x"));
+          var y = Integer.parseInt(ctx.pathParam("y"));
+          var product = x * y;
+          ctx.json(product);
         });
 
     return app;
